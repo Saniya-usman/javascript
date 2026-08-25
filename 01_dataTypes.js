@@ -14,4 +14,25 @@ let loggedIn = true
 //symbol
 //object
 
-console.log(typeof name)
+console.log(typeof name);
+console.log(typeof age);
+
+
+//***************************operations****************************** */
+
+let value = 3
+
+
+//***************************** Array, Objects, functions******* */
+
+const heros = ["shaktiman", "spiderman", "flyingjet", "superman"];
+
+let myObj = {
+    name: "Saniya",
+    age : 22,
+}
+
+const myFunction = function(){
+    console.log("Hello World")
+}
+myFunction()
