@@ -73,5 +73,29 @@ console.log(typeof(fruits));
 console.log(fruits[3]);
 
 //functions
+function hello(){
+    let x = 10;
+    console.log(x);
+    
+}
+hello()
+
+//Hoisting
+
+console.log(a);
+console.log(this.a);
+console.log(window.a);
+
+var a = 10;
+console.log(a);
+console.log(this.a);
+console.log(window.a);
+
+console.log(window);
+console.log(this == window);
+
+
+
+
 
 
