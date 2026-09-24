@@ -95,7 +95,51 @@ console.log(window);
 console.log(this == window);
 
 
+//functions - first class citizens
+//Higher-order functions
+
+function add(a, b){
+    return a+b;
+}
+console.log(add);
+console.log(add(2, 4));
+
+let sum = function(a, b){
+    return a+b;
+}
 
 
+function operate(operationFunc, a, b){
+    return operationFunc(a, b);
+}
+console.log(sum, 2, 5);
+console.log(operate(sum, 6, 7));
 
 
+//Arrow functions
+
+let mul = (a,b) => a*b;
+
+let div = (a, b) => a/b;
+function operaters(opfunc, a, b){
+    return opfunc(a, b);
+}
+console.log(operaters(mul, 3, 5));
+console.log(operaters(div, 10, 5));
+
+//Fuction + lexical Scope = Closure
+let s= 10
+
+function outer(){
+    a= 100
+    function inner(){
+        console.log(a);
+        
+    }
+    return inner;
+}
+
+let returnFuncVar = outer();
+a= 20;
+console.log(returnFuncVar);
+returnFuncVar()
