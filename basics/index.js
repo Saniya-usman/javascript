@@ -180,17 +180,45 @@ fetchData(handleData)
 function getData(){
     return new Promise((resolve, reject)=>{
         setTimeout(()=>{
-            // resolve("data fetched")
-            reject("server error")
+             resolve("data fetched")
+            //reject("server error")
         }, 5000);
     })
 }
-getData()
-    .then(result =>{
+// getData()
+//     .then(result =>{
+//         console.log(result);
+        
+//     })
+//     .catch(error =>{
+//         console.log(error);
+        
+//     })
+async function fetchData() {
+    try {
+        const result = await getData();
         console.log(result);
         
-    })
-    .catch(error =>{
+    } catch (error) {
         console.log(error);
         
-    })
+    }
+}
+
+//map
+const nums = [1, 2, 3,4,5,6]
+console.log(nums);
+const doubleNum = nums.map((num)=> 2*num)
+console.log(doubleNum);
+
+//filter
+const nums1 = [1, 2, 3,4,5,6]
+console.log(nums1);
+const evens = nums.filter((num)=> num%2=== 0)
+console.log(evens);
+
+//reduce
+const nums2 = [1, 2, 3,4,5,6]
+console.log(nums2);
+const product = nums2.reduce((accumulator, num)=> accumulator*num, 1)
+console.log(product);
