@@ -3,6 +3,7 @@
 // console.log("JavaScript is connected!");
 // let name = "Saniya"
 
+
 // var n = 20
 // var m = 50 
 
@@ -143,3 +144,53 @@ let returnFuncVar = outer();
 a= 20;
 console.log(returnFuncVar);
 returnFuncVar()
+
+//callbacks
+
+function fetchData(callback){
+    setTimeout(() =>{
+        let data = 'fetched data successfully';
+        callback(data, null)
+    },5000)
+}
+function handleData(data, error){
+    if (error) {
+        console.log(error);
+    }else{
+        console.log(data);
+    }
+}
+fetchData(handleData)
+
+//problems - Callback Hell, Pyramid of Doom
+
+// asyncOperation1(arg1, (result1)=>{
+//     asyncOperation2(arg2, (result2)=>{
+//         asyncOperation3(arg3, (result3)=>{
+//             asyncOperation4(arg4, (result4)=>{
+//                 //And so on....
+//             })
+//         })
+//     })
+// })
+
+//Promises - objects
+//3 states - pending, fulfilled, rejected
+
+function getData(){
+    return new Promise((resolve, reject)=>{
+        setTimeout(()=>{
+            // resolve("data fetched")
+            reject("server error")
+        }, 5000);
+    })
+}
+getData()
+    .then(result =>{
+        console.log(result);
+        
+    })
+    .catch(error =>{
+        console.log(error);
+        
+    })
